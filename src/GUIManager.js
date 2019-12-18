@@ -26,17 +26,20 @@ class GUIManager {
 		this.addStyle(this.canvasCss, options, this.theme);
     }
 	
-	makeContainerSVG() {		
-		this.svgElement = document.createElement("svg");
-		this.svgElement.xmlns = "http://www.w3.org/2000/svg";
+	makeContainerSVG() {	
+		let ns = "http:\/\/www.w3.org/2000/svg";
+		this.svgElement = document.createElement("svg");		
+		this.svgElement.xmlns = ns;
 		this.svgElement.style.width = this.getCanvasSize().width;
 		this.svgElement.style.height = this.getCanvasSize().height;		
-		this.html.appendChild(this.svgElement);		
-		this.foreignObjectElement = document.createElement("foreignObject");
+		this.html.appendChild(this.svgElement);			
+		this.foreignObjectElement = document.createElementNS(ns, "foreignObject");
 		this.foreignObjectElement.style.width = "100%";
 		this.foreignObjectElement.style.height = "100%";
-		this.foreignObjectElement.id = "GUISVG";
-		this.svgElement.appendChild(this.foreignObjectElement);
+		this.foreignObjectElement.setAttribute("height", 300);
+		this.foreignObjectElement.setAttribute("width", 300);
+		this.foreignObjectElement.id = "GUISVG";		
+		this.svgElement.appendChild(this.foreignObjectElement);		
 	}
 	
 	addGUIContainerOnSVG(element) {
