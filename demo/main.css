@@ -1,0 +1,14 @@
+html, body {
+	height: 100%;
+	width: 100%;
+	padding: 0;
+	margin: 0;
+	overflow: hidden;
+}
+#game {
+	background-color:blue;
+	height: 80%;
+	width: 60%;
+	margin-left:20%;
+	margin-top:5%;
+}
