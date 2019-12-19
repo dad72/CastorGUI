@@ -11,7 +11,7 @@ var createGUI = function()
 	
 	GUIManager.setConvertPixelToPercent(true); // for converte pixel value in percentage
 	
-	guisystem = new GUIManager(canvas, css, {themeRoot: "../dist/", pixel: false}); //No use pixel here	
+	guisystem = new GUIManager(canvas, css, {themeRoot: "", pixel: false}); //No use pixel here	
 	guisystem.makeContainerSVG();
 	
 	// GUI life
@@ -33,15 +33,13 @@ var createGUI = function()
 	let optionsGUIText = {
 		x: 10,
 		y: guisystem.getCanvasSize().height - 40,
-		text: "CastorGUI created by Dad72 for CastorStudio and BabylonJS",
+		text: "CastorGUI created by Dad72 for BabylonJS",
 		color: "#fff809",
 		position: "absolute",
 		inline: true
 	};
 	let createdBy = new GUIText("createdBy", optionsGUIText, guisystem);
 	
-	guisystem.addGUIContainerOnSVG(createdBy);
-
 	//GUI button
 	var myFunction = function()
 	{
